@@ -1,11 +1,11 @@
-GET http://localhost:9000/api
+GET http://localhost:5003/api
 
 ### register a new user
-POST http://localhost:9000/api/register
+POST http://localhost:5003/api/register
 Content-Type: application/json
 
 ### verify user - only first time
-POST http://localhost:9000/api/verify
+POST http://localhost:5003/api/verify
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### validate otp for known user
-POST http://localhost:9000/api/validate
+POST http://localhost:5003/api/validate
 Content-Type: application/json
 
 {
