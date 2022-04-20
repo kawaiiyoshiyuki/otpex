@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api", (req,res) => {
-  res.json({ message: "Welcome to the two factor authentication exmaple" })
+  res.json({ message: "Welcome to the two factor authentication example" })
 });
 
 

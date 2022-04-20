@@ -1,0 +1,23 @@
+GET http://localhost:9000/api
+
+### register a new user
+POST http://localhost:9000/api/register
+Content-Type: application/json
+
+### verify user - only first time
+POST http://localhost:9000/api/verify
+Content-Type: application/json
+
+{
+    "userId": "9149d1ff-6a44-4459-900e-f554ef42baab",
+    "token": "217416"
+}
+
+### validate otp for known user
+POST http://localhost:9000/api/validate
+Content-Type: application/json
+
+{
+    "userId": "9149d1ff-6a44-4459-900e-f554ef42baab",
+    "token": "217416"
+}
