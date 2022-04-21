@@ -9,8 +9,8 @@ POST http://localhost:5003/api/verify
 Content-Type: application/json
 
 {
-    "userId": "9149d1ff-6a44-4459-900e-f554ef42baab",
-    "token": "217416"
+    "userId": "24d63534-2ffb-464a-8f3a-f169755ffad2",
+    "token": "703171"
 }
 
 ### validate otp for known user
@@ -18,6 +18,6 @@ POST http://localhost:5003/api/validate
 Content-Type: application/json
 
 {
-    "userId": "9149d1ff-6a44-4459-900e-f554ef42baab",
+    "userId": "1ae8eac8-82c2-4b18-890d-4c89331c0ca8",
     "token": "217416"
 }

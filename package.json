@@ -10,10 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@levminer/speakeasy": "^1.4.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "node-json-db": "^1.1.0",
-    "speakeasy": "^2.0.0",
+    "qrcode": "^1.5.0",
     "uuid": "^8.3.0"
   }
 }

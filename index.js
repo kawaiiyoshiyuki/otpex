@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const JsonDB = require('node-json-db').JsonDB;
 const Config = require('node-json-db/dist/lib/JsonDBConfig').Config;
 const uuid = require("uuid");
-const speakeasy = require("speakeasy");
+const speakeasy = require("@levminer/speakeasy");
 
 const app = express();
 
@@ -21,16 +21,21 @@ app.get("/api", (req,res) => {
 });
 
 
-app.post("/api/register", (req, res) => {
+app.post("/api/register", async (req, res) => {
   const id = uuid.v4();
   try {
     const path = `/user/${id}`;
     // Create temporary secret until it it verified
-    const temp_secret = speakeasy.generateSecret({ name: 'fsa-secret', length: 160 });
+    const temp_secret = speakeasy.generateSecret(
+      { name: 'secret', length: 160, issuer: 'Yosiro' }
+    );
     // Create user in the database
     db.push(path, { id, temp_secret });
+    const qrcode = require('qrcode');
+    const code = await qrcode.toDataURL(temp_secret.otpauth_url);
     // Send user id and base32 key to user
-    res.json({ id, secret: temp_secret.base32 })
+    res.json({ id, code })
+    // res.send('<img src="' + code + '">');
   } catch(e) {
     console.log(e);
     res.status(500).json({ message: 'Error generating secret key'})
